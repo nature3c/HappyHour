@@ -1,0 +1,24 @@
+{
+  "Deals": [
+    {
+      "name": "McDonald",
+      "description": "Deal and Price.",
+      "expiration date": "9/28/22",
+      "deal list": [
+        "Free happy meal with a combo",
+        "Free fries with a shake",
+        "Buy one get one cheeseburger"
+      ]
+    },
+    {
+      "name": "Burger King",
+      "description": "Deal and Price.",
+      "expiration date": "9/30/22",
+      "deal list": [
+        "Free Whopper with a combo",
+        "Free fries with a junior fry",
+        "Buy one get one junior whopper"
+      ]
+    }
+  ]
+}
