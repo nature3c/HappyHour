@@ -17,7 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.databinding.ActivityMainBinding;
+//import com.example.myapplication.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,7 +38,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String JSON_URL = "https://run.mocky.io/v3/fbeca066-d85f-4b6c-b11f-c351b77c690a";
+    private static String JSON_URL = "https://run.mocky.io/v3/727de0ed-6537-4f8c-93d9-a6cba9046ec0";
 
     List<ResturantModelClass> resturantList;
     RecyclerView recyclerview;
