@@ -39,6 +39,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private static String JSON_URL = "https://run.mocky.io/v3/727de0ed-6537-4f8c-93d9-a6cba9046ec0";
+    //System.out.println("https://run.mocky.io/v3/727de0ed-6537-4f8c-93d9-a6cba9046ec0");
 
     List<ResturantModelClass> resturantList;
     RecyclerView recyclerview;
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     private void PutDataIntoRecyclerView(List<ResturantModelClass> resturantList) {
         Adaptery adaptery = new Adaptery(this, resturantList);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        recyclerview.setAdapter((adaptery));
+        recyclerview.setHasFixedSize(true);
+        recyclerview.setAdapter(adaptery);
     }
 }
