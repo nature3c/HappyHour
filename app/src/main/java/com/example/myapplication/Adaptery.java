@@ -28,7 +28,7 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        v = inflater.inflate(R.layout.resturant_items, parent, false);
+        v = inflater.inflate(R.layout.resturant_item, parent, false);
 
         return new MyViewHolder(v);
     }

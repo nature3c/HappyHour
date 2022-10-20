@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                     ResturantModelClass model = new ResturantModelClass();
                     model.setName(jsonObject1.getString("name"));
-                    model.setDeal(jsonObject1.getString("deal"));
+                    model.setDeal(jsonObject1.getString("deals"));
                     model.setImg(jsonObject1.getString("img"));
                     //model.setExpirationDate(jsonObject1.getString("expiration date"));
 
