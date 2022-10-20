@@ -36,10 +36,10 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(mData.get(position).getName());
-        holder.description.setText(mData.get(position).getDescription()); //using Glide library to display the image
+        holder.deal.setText(mData.get(position).getDeal()); //using Glide library to display the image
 
         Glide.with(mContext)
-                .load(mData.get(position).getImg())
+                .load(mData.get(position).getName())
                 .into(holder.img); //at 18:51
     }
 
@@ -50,16 +50,16 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
+       ImageView img;
        TextView name;
-       TextView description;
-       ImageView img; //might not need to change json
+       TextView deal; //might not need to change json
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.id_txt);
-            description = itemView.findViewById(R.id.name_txt);
             img = itemView.findViewById(R.id.imageView);
+            name = itemView.findViewById(R.id.name_txt);
+            deal = itemView.findViewById(R.id.id_txt);
         }
     }
 }

@@ -2,19 +2,27 @@ package com.example.myapplication;
 
 public class ResturantModelClass {
 
+    String img;
     String name;
-    String description;
-    String dealList;
+    String deal;
     String expirationDate;
 
     public ResturantModelClass(String setName, String setDescription, String setDealList, String setExpirationdate) {
-        name = setName;
-        description = setDescription;
-        dealList = setDealList;
-        expirationDate = setExpirationdate;
+        this.img = img;
+        this.name = name;
+        this.deal = deal;
+        this.expirationDate = expirationDate;
     }
 
     public ResturantModelClass() {
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getName() {
@@ -25,27 +33,19 @@ public class ResturantModelClass {
         this.name = name;
     }
 
-    public String getDescription() {
-        return name;
+    public String getDeal() {
+        return deal;
     }
 
-    public void setDescription(String name) {
-        this.name = name;
+    public void setDeal(String deal) {
+        this.deal = deal;
     }
 
-    public String getImg() {
-        return name;
+    public String getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setImg(String name) {
-        this.name = name;
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
     }
-
-    public String getExpirationDate() {return expirationDate;}
-
-    public void  setExpirationDate(String name) {this.expirationDate = expirationDate;}
-
-    public String getDealList() {return dealList;}
-
-    public void  setDealList(String name) {this.dealList = dealList;}
 }

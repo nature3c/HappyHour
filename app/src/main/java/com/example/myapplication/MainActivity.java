@@ -2,31 +2,12 @@ package com.example.myapplication;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-//import com.example.myapplication.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,11 +19,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String JSON_URL = "https://run.mocky.io/v3/727de0ed-6537-4f8c-93d9-a6cba9046ec0";
+    private static String JSON_URL = "https://run.mocky.io/v3/5110609b-4b9c-4c02-9c72-f15353aed19b";
     //System.out.println("https://run.mocky.io/v3/727de0ed-6537-4f8c-93d9-a6cba9046ec0");
 
     List<ResturantModelClass> resturantList;
-    RecyclerView recyclerview;
+    RecyclerView recyclerView;
     //RecyclerView
 
     @Override
@@ -51,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         resturantList = new ArrayList<>();
-        recyclerview = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
 
         GetData getData = new GetData();
         getData.execute();
@@ -98,14 +79,14 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             try {
                 JSONObject jsonObject = new JSONObject(s);
-                JSONArray jsonArray = jsonObject.getJSONArray("Deals");
+                JSONArray jsonArray = jsonObject.getJSONArray("deals");
                 for(int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                     ResturantModelClass model = new ResturantModelClass();
                     model.setName(jsonObject1.getString("name"));
-                    model.setDescription(jsonObject1.getString("description"));
-                    model.setDealList(jsonObject1.getString("deal list"));
-                    model.setExpirationDate(jsonObject1.getString("expiration date"));
+                    model.setDeal(jsonObject1.getString("deal"));
+                    model.setImg(jsonObject1.getString("img"));
+                    //model.setExpirationDate(jsonObject1.getString("expiration date"));
 
                     resturantList.add(model);
                 }
@@ -117,8 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void PutDataIntoRecyclerView(List<ResturantModelClass> resturantList) {
         Adaptery adaptery = new Adaptery(this, resturantList);
-        recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        recyclerview.setHasFixedSize(true);
-        recyclerview.setAdapter(adaptery);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adaptery);
     }
 }
