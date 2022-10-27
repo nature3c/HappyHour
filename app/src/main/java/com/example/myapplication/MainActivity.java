@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String JSON_URL = "https://run.mocky.io/v3/5110609b-4b9c-4c02-9c72-f15353aed19b";
+    private static String JSON_URL = "https://run.mocky.io/v3/90619a75-a7c9-4d62-9049-a131ea2cfd44";
     private SearchView searchView;
     List<ResturantModelClass> resturantList;
     RecyclerView recyclerView;
@@ -100,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
                 JSONArray jsonArray = jsonObject.getJSONArray("deals");
                 for(int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    ResturantModelClass model = new ResturantModelClass();
-                    model.setName(jsonObject1.getString("name"));
-                    model.setDeal(jsonObject1.getString("deals"));
-                    model.setImg(jsonObject1.getString("img"));
-                    //model.setExpirationDate(jsonObject1.getString("expiration date"));
+                    //ResturantModelClass model = new ResturantModelClass();
+                    String name = (jsonObject1.getString("name"));
+                    String deals = (jsonObject1.getString("deals"));
+                    String img = (jsonObject1.getString("img"));
+                    ResturantModelClass model = new ResturantModelClass(name, deals, img);
 
                     resturantList.add(model);
                 }

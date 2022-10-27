@@ -5,13 +5,11 @@ public class ResturantModelClass {
     String img;
     String name;
     String deal;
-    String expirationDate;
 
-    public ResturantModelClass(String setName, String setDescription, String setDealList, String setExpirationdate) {
+    public ResturantModelClass(String name, String deal, String img) {
         this.img = img;
         this.name = name;
         this.deal = deal;
-        this.expirationDate = expirationDate;
     }
 
     public ResturantModelClass() {
@@ -39,13 +37,5 @@ public class ResturantModelClass {
 
     public void setDeal(String deal) {
         this.deal = deal;
-    }
-
-    public String getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
     }
 }
