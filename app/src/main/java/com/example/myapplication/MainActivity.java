@@ -5,7 +5,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.SearchView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchView searchView;
     List<ResturantModelClass> resturantList;
     RecyclerView recyclerView;
+    Adaptery adaptery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,16 +111,14 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //adapter = new Adaptery(resturantList);
+
             PutDataIntoRecyclerView(resturantList);
-            //recyclerView.setAdapter(adapter);
         }
     }
     private void PutDataIntoRecyclerView(List<ResturantModelClass> resturantList) {
-        Adaptery adaptery = new Adaptery(this, resturantList);
+        adaptery = new Adaptery(this, resturantList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adaptery);
-
     }
 
     private void filterList(String text) {
@@ -132,11 +130,12 @@ public class MainActivity extends AppCompatActivity {
         }
         if (filteredList.isEmpty()) {
             Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+            PutDataIntoRecyclerView(resturantList);
         }
         else {
-            Adaptery adaptery = new Adaptery(this, resturantList);
             adaptery.setFilteredList(filteredList);
             System.out.println("filtered list" + filteredList.get(0).getName());
+            PutDataIntoRecyclerView(filteredList);
         }
     }
 }
