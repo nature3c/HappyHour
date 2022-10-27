@@ -16,12 +16,23 @@ import java.util.List;
 public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
 
     private Context mContext;
+    private List<ResturantModelClass> filteredList;
     private List<ResturantModelClass> mData;
 
-   public Adaptery(Context mContext, List<ResturantModelClass> mData) {
-       this.mContext = mContext;
-       this.mData = mData;
-   }
+   /*public Adaptery(List<ResturantModelClass> resturantList) {
+       mData = resturantList;
+   }*/
+
+    public void setFilteredList(List<ResturantModelClass> filteredList) {
+        this.filteredList = filteredList;
+        notifyDataSetChanged();
+    }
+
+    public Adaptery(Context mContext, List<ResturantModelClass> mData) {
+        this.mContext = mContext;
+        this.mData = mData;
+    }
+
 
     @NonNull
     @Override
@@ -45,14 +56,18 @@ public class Adaptery extends RecyclerView.Adapter<Adaptery.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-       return mData.size();
+        return mData.size();
+    }
+
+    public List<ResturantModelClass> getFilteredList() {
+        return filteredList;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-       ImageView img;
-       TextView name;
-       TextView deal; //might not need to change json
+        ImageView img;
+        TextView name;
+        TextView deal; //might not need to change json
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
