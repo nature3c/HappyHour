@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
-import android.content.ClipData;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,11 +28,20 @@ public class MainActivity extends AppCompatActivity {
     List<ResturantModelClass> resturantList;
     RecyclerView recyclerView;
     Adaptery adaptery;
+    Button back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        back_button = (Button) findViewById(R.id.back);
+
+        back_button.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FrontActivity.class);
+            startActivity(intent);
+        });
+        //setContentView(R.layout.activity_main); fixes back button
 
         searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
