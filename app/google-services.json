@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "105579298037",
+    "project_id": "mudatabase-11b6b",
+    "storage_bucket": "mudatabase-11b6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:105579298037:android:767a64d580f76af2e599bc",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "105579298037-pt3r265ig1s351l5mq7ns7ve2iflnd4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmQXM-kW7hZ3E92Y6jqVxpTVjsJ1RM4Ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105579298037-pt3r265ig1s351l5mq7ns7ve2iflnd4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
